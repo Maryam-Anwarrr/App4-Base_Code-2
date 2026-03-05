@@ -17,7 +17,7 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-The goal of this code is to give the percent possibility that a rash is scabies or contact dermatitis after answering a series of questions.
+The goal of this code is to give the percent possibility that your symptoms are Influenza or just a common cold. 
  
 Known Issues:
 Results are currently not showing up when pressing button on last page
@@ -39,24 +39,24 @@ https://mybestguide.com/health-and-care/skin-allergy/
 
 
 <script>
-        var contactdermatitis_count = 0; //contactdermatitis count to begin at 0
-        var scabies_count = 0; //scabies count to begin at 0
+        var influenza_count = 0; //influenza count to begin at 0
+        var commoncold_count = 0; //common cold count to begin at 0
 
-        function contactdermatitisAdd(){
-            contactdermatitis_count = contactdermatitis_count + 1; //if question relates to contact dermatitis, add 1
-		alert(contactdermatitis_count); //alerts that question relates to contact dermatitis 
+        function influenzaAdd(){
+            influenza_count = influenza_count + 1; //if question relates to influenza, add 1
+		alert(influenza_count); //alerts that question relates to influenza
 
         }
 	
-	 function scabiesAdd(){
-            scabies_count = scabies_count + 1; //if question relates to scabies, add 1
+	 function commoncoldAdd(){
+            commoncold_count = commoncold_count + 1; //if question relates to commoncold, add 1
         
         }
 	
 	function getResults(){
-		var contactdermatitisPercent = (contactdermatitis_count / 4) * 100; //equation to calculate the contact dermatitis percent by questions that answered "Yes" to contact dermatitis
-		var scabiesPercent = (scabies_count / 4) * 100; //equation to calculate the scabies percent by questions that answered "Yes" to scabies
-		document.getElementById("results").innerHTML = "Probability it is contact dermatitis =" + contactdermatitisPercent + "<br> Probability it is scabies = " + scabiesPercent; 	//function to calculate the percent possibility that it is either contact dermatitis or scabies
+		var influenzaPercent = (influenza_count / 4) * 100; //equation to calculate the influenza percent by questions that answered "Yes" to influenza 
+		var commoncoldPercent = (commoncold_count / 4) * 100; //equation to calculate the commoncold percent by questions that answered "Yes" to commoncold
+		document.getElementById("results").innerHTML = "Probability it is influenza =" + influenzaPercent + "<br> Probability it is commoncold = " + commoncoldPercent; 	//function to calculate the percent possibility that it is either influenza or common cold
 
 	}
 
@@ -87,11 +87,11 @@ https://mybestguide.com/health-and-care/skin-allergy/
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>DIY IS HERE!?</h1>  <! header on first page when visiting site >
+	<h1>HELLO APP</h1>  <! header on first page when visiting site >
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you wondering if your rash could potentially be scabies? Answer a few short questions to find out!</p>  <! introduction paragraph >
+	<p>Are you wondering if your symptoms could be the flu or a cold? Answer a few short questions to find out!</p>  <! introduction paragraph >
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>  <! code for button on first page, this brings you to series of questions >
 	
@@ -104,58 +104,58 @@ https://mybestguide.com/health-and-care/skin-allergy/
 <div class="page" id="one">  <! this page includes code that asks the user the first question. Once user presses the "Yes" or "No" button, the user will be directed to page 2 >
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
-	<!-- added code to make yes or no buttons for question 1, response goes into function for contact dermatits and scabies --> 
+	<!-- added code to make yes or no buttons for question 1, response goes into function for influenza or a cold --> 
 	</div>
 	
     	<div id="content" class="w3-container">
-	<p>Is your rash mainly itching at night?</p>   <! question 1 that is asked to user >
+	<p>Do you have a high fever?</p>   <! question 1 that is asked to user >
 	</div>
-	<a href="#two" onclick="scabiesAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! if user responds yes, one will be added to scabies >
-	<a href="#two" onclick="contactdermatitisAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! if user responds no, one will be added to contact dermatitis  >
+	<a href="#two" onclick="influenzaAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! if user responds yes, one will be added to influenza >
+	<a href="#two" onclick="commoncoldAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! if user responds no, one will be added to common cold  >
      
 		 <!-- added question into content section --> 
     	</div>
 </div>
 
-<div class="page" id="two">  <! page two includes information that asks user a question then takes their response and either adds to contact dermatitis or adds to scabies >
+<div class="page" id="two">  <! page two includes information that asks user a question then takes their response and either adds to influenza or adds to commoncold >
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>  <! header displayed on page 2 >
 	</div>
 	<div id="content" class="w3-container">
 	 <!-- moved question to appear above buttons --> 
-	<p>Is your rash forming a line?</p>  <! second question that is asked to user >
-	<a href="#three" onclick="scabeisAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! if user resonds yes, one will be added to scabies >
-	<a href="#three" onclick="contactdermatitisAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! if user responds no, one will be added to contact dermatits  >
+	<p>Do you have severe congestion or sneezing?<p>  <! second question that is asked to user >
+	<a href="#three" onclick="commoncoldAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! if user resonds yes, one will be added to commoncold >
+	<a href="#three" onclick="influenzaAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! if user responds no, one will be added to contact influenza  >
 	
 		
 		<!-- Added content into page two content section and put corresponding scabies and contact dermatitis signs-->
 	</div>
 </div>	
 	
-<div class="page" id="three">  <! page 3 include the third question that the user is asked to help determine the probabilty of scabies or contact dermatits. once user clicks "yes" or "no", user will be redirected to page 3 >
+<div class="page" id="three">  <! page 3 include the third question that the user is asked to help determine the probabilty of influenza or commoncold. once user clicks "yes" or "no", user will be redirected to page 3 >
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>  <! header displayed on page 3 >
 	</div>
 	 <!-- moved question to appear above buttons --> 
-	<p>Is your rash blotchy?</p>     <! question asked on page 3 >
-	<a href="#four" onclick="contactdermatitisAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! one will be added to contact dermatitis if user responds yes on question 3 >
-	<a href="#four" onclick="scabiesAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! one will be added to scabies if user responds no on question 3 >
+	<p>Are you experiencing aches and fatigue?</p>     <! question asked on page 3 >
+	<a href="#four" onclick="influenzaAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! one will be added to influenza if user responds yes on question 3 >
+	<a href="#four" onclick="commoncoldAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! one will be added to commoncold if user responds no on question 3 >
     	<div id="content" class="w3-container">
 
-		 <!-- added question into content section and added corresponfing allergy/cold responses --> 
+		 <!-- added question into content section and added corresponfing influenza/cold responses --> 
     	</div>
 </div>
-	<div class="page" id="four">  <! this page includes content that askes user the 4th question to determine the probability of their rash being contact dermatitis or scabies, once user clicks "yes" or "no", they will be redirected to page 5 >
+	<div class="page" id="four">  <! this page includes content that askes user the 4th question to determine the probability of their symptoms being the flu or a cold, once user clicks "yes" or "no", they will be redirected to page 5 >
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>  <! header on page four >
 	</div>
         <!-- moved question to appear above buttons --> 
-	<p>Does your rash sting?</p>  <! 5th question displayed for user to answer >
-	<a href="#five" onclick="contactdermatitisAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! if user responfd yes, one will be added to contact dermatitis >
-	<a href="#five" onclick="scabiesAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! if user responds no, one will be added to scabies >
+	<p>Did your symptoms develop gradually?</p>  <! 5th question displayed for user to answer >
+	<a href="#five" onclick="commoncoldAdd();"class="w3-btn w3-grey w3-round"> Yes </a>  <! if user responfd yes, one will be added to common cold >
+	<a href="#five" onclick="influenzaAdd();"class="w3-btn w3-grey w3-round"> No </a>  <! if user responds no, one will be added to influenza >
     	<div id="content" class="w3-container">
            
-		 <!-- changed question number and page ID; added question into content section and added corresponing contact dermatitis/scabies responses --> 
+		 <!-- changed question number and page ID; added question into content section and added corresponing influenza/commoncold responses --> 
 		</div>
 </div>
 		</div>
@@ -167,7 +167,7 @@ https://mybestguide.com/health-and-care/skin-allergy/
 	<div id="content" class="w3-container">	
 		<p id="results"></p>
     	</div>
-		<button onclick="getResults()">Results</button>  <! button that once pressed will display probability that symptoms are either contact dermatitis or scabies from previously answered questions >
+		<button onclick="getResults()">Results</button>  <! button that once pressed will display probability that symptoms are either influenza or commoncold from previously answered questions >
 		
 	</div>
 
